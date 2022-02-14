@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class FuncionPoligonoRegular {
     static Scanner sc = new Scanner(System.in);
 
-    static public String calcular() {
+    static public void calcular() {
         String sol;
         double num, lon, apo;
 
@@ -26,7 +26,8 @@ public class FuncionPoligonoRegular {
             sol = String.valueOf((num * lon * apo) / 2);
         }
 
-        return sol;
+        System.out.println("Solución: " + sol);
+        System.out.println();
     }
 
 }

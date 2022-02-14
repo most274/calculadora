@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class FuncionTeoremaPitagoras {
     static Scanner sc = new Scanner(System.in);
 
-    static public String calcular() {
+    static public void calcular() {
         int opc = 0;
         String sol = "";
         double cat = -1, cat2 = -1, hip = -1;
@@ -46,8 +46,9 @@ public class FuncionTeoremaPitagoras {
                 }       
             break;
         }
-
-        return sol;
+        
+        System.out.println("Solución: " + sol);
+        System.out.println();
     }
 
 }
