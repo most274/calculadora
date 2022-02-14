@@ -1,7 +1,9 @@
 package com.maksym;
 
+import java.security.interfaces.ECKey;
 import java.util.Scanner;
 import com.maksym.funciones.aritmeticaBasica;
+import com.maksym.funciones.FuncionEcuaciones;
 import com.maksym.funciones.FuncionPoligonoRegular;
 import com.maksym.funciones.FuncionTeoremaPitagoras;
 
@@ -12,7 +14,7 @@ import com.maksym.funciones.FuncionTeoremaPitagoras;
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Integer opcion = 0;
+        Integer a,b,c, opcion = 0;
 
         do {
             System.out.println("0 para salir");
@@ -34,6 +36,24 @@ public class App {
                 case 3:
                     FuncionTeoremaPitagoras.calcular();
                     break;
+                case 4:
+                    System.out.println("Introduzca el coeficiente grado 1: ");
+                    b=sc.nextInt();
+                    System.out.println("Introduzca el termino independiente: ");
+                    c=sc.nextInt();
+                    FuncionEcuaciones ec = new FuncionEcuaciones(b,c);
+                    System.out.println(ec.CalcularEcuacion());
+                    break;
+                case 5:
+                    System.out.println("Introduzca el coeficiente de grado 2: ");
+                    a=sc.nextInt();
+                    System.out.println("Introduzca el coeficiente grado 1: ");
+                    b=sc.nextInt();
+                    System.out.println("Introduzca el termino independiente: ");
+                    c=sc.nextInt();
+                    FuncionEcuaciones ecuacion = new FuncionEcuaciones(a,b,c);
+                    System.out.println(ecuacion.CalcularEcuacion());
+                break;
                 default:
                     break;
             }
