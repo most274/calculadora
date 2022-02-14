@@ -1,8 +1,10 @@
 package com.maksym;
 
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Test;
 
 /**
  * Unit test for simple App.
@@ -12,7 +14,7 @@ public class AppTest
     /**
      * Rigorous Test :-)
      */
-    @Test
+    @org.junit.jupiter.api.Test
     public void shouldAnswerWithTrue()
     {
         assertTrue( true );
