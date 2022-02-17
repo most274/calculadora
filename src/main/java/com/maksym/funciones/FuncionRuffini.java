@@ -16,11 +16,15 @@ public class FuncionRuffini {
         tam = Integer.parseInt(sc.next());
         ArrayList<Integer> array = new ArrayList<Integer>();
 
+        for(int i=0; i<array.size(); i++){
+            array.add(i, 0);
+        }
+
         for(int i = tam; i >= 0; i--) {
             System.out.println("Introduzca el coeficiente de grado "+i+"º : ");
             num = sc.nextInt();
 
-            array.set(i, num);
+            array.add(i, num);
         }
 
         for(int i=0; i<array.size();i++){
