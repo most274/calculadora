@@ -23,6 +23,7 @@ public class App {
             System.out.println("3 Teorema de Pitágoras");
             System.out.println("4 Ecuaciones 1º grado");
             System.out.println("5 Ecuaciones 2º grado");
+            System.out.println("6 Ecuaciones superior al 3º grado");
             System.out.print("Introduzca una opción: ");
             opcion = sc.nextInt();
 
@@ -54,6 +55,9 @@ public class App {
                     FuncionEcuaciones ecuacion = new FuncionEcuaciones(a,b,c);
                     System.out.println(ecuacion.CalcularEcuacion());
                 break;
+                case 6:
+                    FuncionTeoremaPitagoras.calcular();
+                    break;
                 default:
                     break;
             }
