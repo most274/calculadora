@@ -31,7 +31,7 @@ public class FuncionEcuaciones {
                 sol+=(-this.c/this.b);
             }
         }else
-            if((Math.pow(this.b,2)-4*this.a*this.b)<0){
+            if((Math.pow(this.b,2)-(4*this.a*this.b))<0){
                 sol="No tiene soluciones reales";
             }else{
                 sol="Las soluciones son: ";

@@ -1,6 +1,6 @@
 package com.maksym;
 
-import java.security.interfaces.ECKey;
+
 import java.util.Scanner;
 import com.maksym.funciones.aritmeticaBasica;
 import com.maksym.funciones.FuncionEcuaciones;
