@@ -31,16 +31,14 @@ public class FuncionEcuaciones {
                 sol+=(-this.c/this.b);
             }
         }else
-            if((Math.pow(this.b,2)-(4*this.a*this.b))<0){
+            if((Math.pow(this.b,2)-(4*this.a*this.c))<0){ //Daría lugar a una raiz negativa, por lo tanto tendríamos problemas y no existirían soluciones reales.
                 sol="No tiene soluciones reales";
             }else{
                 sol="Las soluciones son: ";
-                sol+=((-this.b+Math.sqrt(Math.pow(this.b,2)-4*this.a*this.b))/(2*this.a))+" y ";
-                sol+=((-this.b-Math.sqrt(Math.pow(this.b,2)-4*this.a*this.b))/(2*this.a));
+                sol+=((-this.b+Math.sqrt(Math.pow(this.b,2)-4*this.a*this.c))/(2*this.a))+" y ";
+                sol+=((-this.b-Math.sqrt(Math.pow(this.b,2)-4*this.a*this.c))/(2*this.a));
             }
         return sol;
     };
-
-   
 }
 

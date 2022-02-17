@@ -5,6 +5,7 @@ import java.util.Scanner;
 import com.maksym.funciones.aritmeticaBasica;
 import com.maksym.funciones.FuncionEcuaciones;
 import com.maksym.funciones.FuncionPoligonoRegular;
+import com.maksym.funciones.FuncionRuffini;
 import com.maksym.funciones.FuncionTeoremaPitagoras;
 
 /**
@@ -23,7 +24,7 @@ public class App {
             System.out.println("3 Teorema de Pitágoras");
             System.out.println("4 Ecuaciones 1º grado");
             System.out.println("5 Ecuaciones 2º grado");
-            System.out.println("6 Ecuaciones superior al 3º grado");
+            System.out.println("6 Ecuaciones superior al 2º grado");
             System.out.print("Introduzca una opción: ");
             opcion = sc.nextInt();
 
@@ -56,7 +57,7 @@ public class App {
                     System.out.println(ecuacion.CalcularEcuacion());
                 break;
                 case 6:
-                    FuncionTeoremaPitagoras.calcular();
+                    FuncionRuffini.calcular();
                     break;
                 default:
                     break;
