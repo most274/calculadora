@@ -17,6 +17,6 @@ public class AppTest
     @org.junit.jupiter.api.Test
     public void shouldAnswerWithTrue()
     {
-        assertTrue( true );
+        // assertTrue( true );
     }
 }

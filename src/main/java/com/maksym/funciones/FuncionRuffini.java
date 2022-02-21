@@ -17,7 +17,7 @@ public class FuncionRuffini {
         ArrayList<Integer> array = new ArrayList<Integer>();
 
         for(int i=0; i<array.size(); i++){
-            array.add(i, 0);
+            array.add(0, 0);
         }
 
         for(int i = tam; i >= 0; i--) {
