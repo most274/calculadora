@@ -1,6 +1,5 @@
 package com.maksym;
 
-
 import java.util.Scanner;
 import com.maksym.funciones.aritmeticaBasica;
 import com.maksym.funciones.FuncionEcuaciones;
@@ -15,7 +14,7 @@ import com.maksym.funciones.FuncionTeoremaPitagoras;
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Integer a,b,c, opcion = 0;
+        Integer a, b, c, opcion = 0;
 
         do {
             System.out.println("0 para salir");
@@ -30,7 +29,24 @@ public class App {
 
             switch (opcion) {
                 case 1:
-                    aritmeticaBasica.aritmetica();
+                    int option1;
+
+                    System.out.println("1 Sumar");
+                    System.out.println("2 Restar");
+                    System.out.print("Que desea: ");
+
+                    option1 = sc.nextInt();
+                    System.out.println("Introduzca dos números: ");
+
+                    if (option1 == 1) {
+                        a = sc.nextInt();
+                        b = sc.nextInt();
+                        aritmeticaBasica.sumar(a, b);
+                    } else {
+                        a = sc.nextInt();
+                        b = sc.nextInt();
+                        aritmeticaBasica.restar(a, b);
+                    }
                     break;
                 case 2:
                     FuncionPoligonoRegular.calcular();
@@ -40,22 +56,22 @@ public class App {
                     break;
                 case 4:
                     System.out.println("Introduzca el coeficiente grado 1: ");
-                    b=sc.nextInt();
+                    b = sc.nextInt();
                     System.out.println("Introduzca el termino independiente: ");
-                    c=sc.nextInt();
-                    FuncionEcuaciones ec = new FuncionEcuaciones(b,c);
+                    c = sc.nextInt();
+                    FuncionEcuaciones ec = new FuncionEcuaciones(b, c);
                     System.out.println(ec.CalcularEcuacion());
                     break;
                 case 5:
                     System.out.println("Introduzca el coeficiente de grado 2: ");
-                    a=sc.nextInt();
+                    a = sc.nextInt();
                     System.out.println("Introduzca el coeficiente grado 1: ");
-                    b=sc.nextInt();
+                    b = sc.nextInt();
                     System.out.println("Introduzca el termino independiente: ");
-                    c=sc.nextInt();
-                    FuncionEcuaciones ecuacion = new FuncionEcuaciones(a,b,c);
+                    c = sc.nextInt();
+                    FuncionEcuaciones ecuacion = new FuncionEcuaciones(a, b, c);
                     System.out.println(ecuacion.CalcularEcuacion());
-                break;
+                    break;
                 case 6:
                     FuncionRuffini.calcular();
                     break;
@@ -64,6 +80,8 @@ public class App {
             }
 
         } while (opcion != 0);
+
+        sc.close();
 
     }
 }

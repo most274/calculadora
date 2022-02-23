@@ -37,6 +37,28 @@ public class FuncionEcuacionesTest {
     }
 
     @Test 
+    @DisplayName("Sumar Test Aritmética básica")
+    public void testAritmeticaSumar() {
+       
+        provideInput("1\n1\n5\n5\n0");
+        
+        App.main(new String[0]);
+        assertThat(getOutput(), containsString("Solución: 10") );
+        
+    }
+
+    @Test 
+    @DisplayName("Restar Test Aritmética básica")
+    public void testAritmeticaRestar() {
+       
+        provideInput("1\n2\n5\n5\n0");
+        
+        App.main(new String[0]);
+        assertThat(getOutput(), containsString("Solución: 0") );
+        
+    }
+
+    @Test 
     @DisplayName("Test ecuación de primer grado")
     public void testEcuacion1ºgrad() {
        
