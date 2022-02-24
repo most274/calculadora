@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.CoreMatchers.containsString;
 
-public class FuncionEcuacionesTest {
+public class AritmeticaTest {
     
     private final InputStream systemIn = System.in;
     private final PrintStream systemOut = System.out;
@@ -36,50 +36,27 @@ public class FuncionEcuacionesTest {
         return testOut.toString();
     }
 
-
     @Test 
-    @DisplayName("Test ecuación de primer grado")
-    public void testEcuacion1ºgrad() {
+    @DisplayName("Sumar Test Aritmética básica")
+    public void testAritmeticaSumar() {
        
-        provideInput("4\n3\n-18\n0");
+        provideInput("1\n1\n5\n5\n0");
         
         App.main(new String[0]);
-        assertThat(getOutput(), containsString("La solución es: 6") );
+        assertThat(getOutput(), containsString("Solución: 10") );
         
     }
 
     @Test 
-    @DisplayName("Test No ecuacion")
-    public void TestEcuacion1ºgraderr() {
+    @DisplayName("Restar Test Aritmética básica")
+    public void testAritmeticaRestar() {
        
-        provideInput("4\n0\n52\n0");
+        provideInput("1\n2\n5\n5\n0");
         
         App.main(new String[0]);
-        assertThat(getOutput(), containsString("Esto no es una ecuación") );
+        assertThat(getOutput(), containsString("Solución: 0") );
         
     }
-
-    @Test 
-    @DisplayName("Test ecuación de segundo grado sin soluciones")
-    public void TestEcuacion2ºgraderr() {
-       
-        provideInput("5\n2\n3\n4\n0");
-        
-        App.main(new String[0]);
-        assertThat(getOutput(), containsString("No tiene soluciones reales") );
-        
-    }    
-
-    @Test 
-    @DisplayName("Test ecuación de segundo grado")
-    public void TestEcuacion2ºgrad() {
-       
-        provideInput("5\n2\n3\n-4\n0");
-        
-        App.main(new String[0]);
-        assertThat(getOutput(), containsString("Las soluciones son: 0.8507810593582121 y -2.350781059358212") );
-        
-    }    
 
     @AfterEach
     public void restoreSystemInputOutput() {

@@ -13,8 +13,7 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.CoreMatchers.containsString;
 
-public class FuncionEcuacionesTest {
-    
+public class ruffiniTest {
     private final InputStream systemIn = System.in;
     private final PrintStream systemOut = System.out;
 
