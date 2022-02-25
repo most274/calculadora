@@ -2,7 +2,6 @@ package com.maksym.funciones;
 
 import java.util.Scanner;
 
-import javax.sound.sampled.SourceDataLine;
 
 import java.util.ArrayList;
 
@@ -19,27 +18,22 @@ public class FuncionRuffini {
         tam = Integer.parseInt(sc.next());
         ArrayList<Integer> array = new ArrayList<Integer>();
 
-        // for(int i=0; i<tam; i++){ //Creo el array para rellenarno de forma inversa
-        //     array.add(i, 0);
-        // }
+        for(int i=0; i<=tam; i++){ //Creo el array para rellenarno de forma inversa
+            array.add(i, 0);
+        }
 
 
         for(int i = tam; i >= 0; i--) {
             System.out.println("Introduzca el coeficiente de grado "+i+"º : ");
             num = sc.nextInt();
             
-            array.add(i, num);
+            array.set(i, num);
         }
+        
 
-        for(int i=0; i<array.size();i++){
-            System.out.println(array.get(i));
-        }
 
-        System.out.println("El tamaño es: "+array.size());
-        System.out.println(array.get(tam));
-
-        for(int i=1; i<array.get(tam);i++){
-            if(array.get(array.size()-1)%i==0){//Comprobamos que el valor sea divisible entre el termino independiente
+        for(int i=1; i<array.get(0);i++){
+            if(array.get(0)%i==0){//Comprobamos que el valor sea divisible entre el termino independiente
                 res=0; //Reseteo los resultados para volver a usarlos
                 res1=0;
                 for(int j=0;j<array.size()-1;j++){
