@@ -49,10 +49,50 @@ public class App {
                     }
                     break;
                 case 2:
-                    FuncionPoligonoRegular.calcular();
+                    double num, lon, apo;
+
+                    // Se introducen los datos
+                    System.out.println("Introduzca el número de lados: ");
+                    num = Double.parseDouble(sc.next());
+
+                    System.out.println("Introduzca la longitud de los lados: ");
+                    lon = Double.parseDouble(sc.next());
+
+                    System.out.println("Introduzca el apótema: ");
+                    apo = Double.parseDouble(sc.next());
+
+                    FuncionPoligonoRegular.calcular(num, lon, apo);
                     break;
                 case 3:
-                    FuncionTeoremaPitagoras.calcular();
+                    int opc = 0;
+                    double cat = -1, cat2 = -1, hip = -1;
+                    
+                    // Se elige la opción
+                    System.out.println("¿Qué desea calcular, el cateto(1) o la hipotenusa(2)?");
+                    opc = Integer.parseInt(sc.next());
+
+                    switch (opc) {
+                        case 1:
+                            // Se recogen los datos
+                            System.out.println("Introduzca el otro cateto");
+                            cat = Double.parseDouble(sc.next());
+
+                            System.out.println("Introduzca la hipotenusa");
+                            hip = Double.parseDouble(sc.next());
+
+                            break;
+                        case 2:
+                            // Se recogen los datos
+                            System.out.println("Introduzca el primer cateto");
+                            cat = Double.parseDouble(sc.next());
+
+                            System.out.println("Introduzca el segundo cateto");
+                            cat2 = Double.parseDouble(sc.next());
+
+                            break;
+                    }
+
+                    FuncionTeoremaPitagoras.calcular(cat,cat2,hip,opc);
                     break;
                 case 4:
                     System.out.println("Introduzca el coeficiente grado 1: ");
