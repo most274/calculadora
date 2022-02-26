@@ -1,9 +1,11 @@
 package com.maksym;
 
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
+
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,7 +15,7 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.CoreMatchers.containsString;
 
-public class RuffiniTest {
+public class RuffiniTest  {
     private final InputStream systemIn = System.in;
     private final PrintStream systemOut = System.out;
 
@@ -40,7 +42,7 @@ public class RuffiniTest {
     @DisplayName("Test Ruffini")
     public void testEcuacionRuffini() {
        
-        provideInput("6\n4\n1\n0\n-9\n4\n12");
+        provideInput("6\n4\n1\n0\n-9\n4\n12\n0\n");
         
         App.main(new String[0]);
         assertThat(getOutput(), containsString("Las soluciones son: -1, 2, -3,") );
@@ -51,7 +53,7 @@ public class RuffiniTest {
     @DisplayName("Test Ruffini Sin soluciones reales")
     public void TestEcuacionRuffiniSinSol() {
        
-        provideInput("6\n3\n5\n-9\n4\n13");
+        provideInput("6\n3\n5\n-9\n4\n13\n0\n");
         
         App.main(new String[0]);
         assertThat(getOutput(), containsString("Las soluciones no son números enteros") );

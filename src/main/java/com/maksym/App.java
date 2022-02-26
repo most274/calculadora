@@ -6,6 +6,7 @@ import com.maksym.funciones.FuncionEcuaciones;
 import com.maksym.funciones.FuncionPoligonoRegular;
 import com.maksym.funciones.FuncionRuffini;
 import com.maksym.funciones.FuncionTeoremaPitagoras;
+import java.util.ArrayList;
 
 /**
  * Hello world!
@@ -113,7 +114,23 @@ public class App {
                     System.out.println(ecuacion.CalcularEcuacion());
                     break;
                 case 6:
-                    FuncionRuffini.calcular();
+                    int tam;
+                    Integer valor;
+                    System.out.println("Introduzca el grado de la ecuación: ");
+                    tam = sc.nextInt();
+                    ArrayList<Integer> array = new ArrayList<Integer>();
+
+                    for(int i=0; i<=tam; i++){ //Creo el array para rellenarno de forma inversa
+                        array.add(i, 0);
+                    }
+            
+                    for(int i = tam; i >= 0; i--) {
+                        System.out.println("Introduzca el coeficiente de grado "+i+"º : ");
+                        valor = sc.nextInt();
+                        array.set(i, valor);
+                    }
+
+                    System.out.println(FuncionRuffini.calcular(array));;
                     break;
                 default:
                     break;

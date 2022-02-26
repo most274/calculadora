@@ -47,7 +47,6 @@ public class PoligonosTest {
         
     }
 
-
     @AfterEach
     public void restoreSystemInputOutput() {
         System.setIn(systemIn);
