@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.CoreMatchers.containsString;
 
-public class ruffiniTest {
+public class RuffiniTest {
     private final InputStream systemIn = System.in;
     private final PrintStream systemOut = System.out;
 
@@ -37,48 +37,25 @@ public class ruffiniTest {
 
 
     @Test 
-    @DisplayName("Test ecuación de primer grado")
-    public void testEcuacion1ºgrad() {
+    @DisplayName("Test Ruffini")
+    public void testEcuacionRuffini() {
        
-        provideInput("4\n3\n-18\n0");
+        provideInput("6\n4\n1\n0\n-9\n4\n12");
         
         App.main(new String[0]);
-        assertThat(getOutput(), containsString("La solución es: 6") );
+        assertThat(getOutput(), containsString("Las soluciones son: -1, 2, -3,") );
         
     }
 
     @Test 
-    @DisplayName("Test No ecuacion")
-    public void TestEcuacion1ºgraderr() {
+    @DisplayName("Test Ruffini Sin soluciones reales")
+    public void TestEcuacionRuffiniSinSol() {
        
-        provideInput("4\n0\n52\n0");
+        provideInput("6\n3\n5\n-9\n4\n13");
         
         App.main(new String[0]);
-        assertThat(getOutput(), containsString("Esto no es una ecuación") );
-        
+        assertThat(getOutput(), containsString("Las soluciones no son números enteros") );
     }
-
-    @Test 
-    @DisplayName("Test ecuación de segundo grado sin soluciones")
-    public void TestEcuacion2ºgraderr() {
-       
-        provideInput("5\n2\n3\n4\n0");
-        
-        App.main(new String[0]);
-        assertThat(getOutput(), containsString("No tiene soluciones reales") );
-        
-    }    
-
-    @Test 
-    @DisplayName("Test ecuación de segundo grado")
-    public void TestEcuacion2ºgrad() {
-       
-        provideInput("5\n2\n3\n-4\n0");
-        
-        App.main(new String[0]);
-        assertThat(getOutput(), containsString("Las soluciones son: 0.8507810593582121 y -2.350781059358212") );
-        
-    }    
 
     @AfterEach
     public void restoreSystemInputOutput() {
