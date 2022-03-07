@@ -11,8 +11,5 @@ public class FooJoseCarlos {
         
         System.out.println("Solución: " + sol);
     }
-
-
-
-
+    
 }
